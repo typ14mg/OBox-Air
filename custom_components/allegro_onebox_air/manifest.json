@@ -1,0 +1,16 @@
+{
+  "domain": "allegro_onebox_air",
+  "name": "OBox Air",
+  "codeowners": [
+    "@typ14mg"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/typ14mg/OBox-Air",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/typ14mg/OBox-Air/issues",
+  "requirements": [
+    "curl-cffi==0.16.3"
+  ],
+  "version": "0.3.0"
+}

@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible problem with the integration.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        This is an unofficial integration. Before posting, remove credentials,
+        cookies, tokens, personal addresses and unrelated log entries.
+        Do not post your complete Home Assistant configuration or diagnostics.
+  - type: input
+    id: integration_version
+    attributes:
+      label: Integration version
+      placeholder: 0.3.0
+    validations:
+      required: true
+  - type: input
+    id: homeassistant_version
+    attributes:
+      label: Home Assistant version and installation type
+      placeholder: 2025.12.4, Container
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce and expected result
+      description: Include the public One Box code or pointId if relevant. Exact home coordinates are unnecessary.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include the error shown by the setup form, if any.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant, redacted logs
+      description: Paste only entries for custom_components.allegro_onebox_air. Remove sensitive data before posting.
+      render: text

@@ -1,0 +1,30 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: python -m pip install -r requirements-test.txt
+      - name: Lint
+        run: python -m ruff check .
+      - name: Formatting
+        run: python -m ruff format --check .
+      - name: Offline integration and project tests
+        run: python -m pytest -q
+      - name: Project metadata and translation checks
+        run: python tools/validate_project.py
+      - name: Build and verify manual-install component archive
+        run: python tools/build_release.py

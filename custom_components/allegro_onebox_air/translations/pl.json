@@ -1,0 +1,63 @@
+{
+  "title": "OBox Air",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Wybierz Allegro One Box",
+        "description": "Odczytuj publiczne pomiary PM2.5 i PM10 bezpośrednio z Allegro. Znajdź automat w dowolnym miejscu w Polsce.",
+        "menu_options": {
+          "nearby": "Wyszukaj na mapie",
+          "manual": "Podaj kod, ID lub link"
+        }
+      },
+      "nearby": {
+        "title": "Znajdź automaty na mapie",
+        "description": "Wybierz dowolne miejsce w Polsce. Wyszukiwanie obejmuje kwadrat sięgający o podaną odległość na północ, południe, wschód i zachód. Zacznij od 2 km i zmniejsz obszar, jeśli Allegro grupuje punkty.",
+        "data": {
+          "location": "Miejsce wyszukiwania",
+          "radius_km": "Odległość od środka mapy"
+        }
+      },
+      "select": {
+        "title": "Wybierz One Box",
+        "description": "Wybierz punkt z listy uporządkowanej według odległości od wybranego miejsca. Adres pojawi się we wpisie po zatwierdzeniu. Niektóre punkty mogą obecnie nie udostępniać pomiarów jakości powietrza.",
+        "data": {
+          "point_id": "One Box"
+        }
+      },
+      "manual": {
+        "title": "Podaj One Box",
+        "description": "Wpisz publiczny kod automatu (np. AL012WE1), numeryczne pointId lub link do mapy Allegro zawierający pointId. Wyszukiwanie kodu obejmuje Polskę.",
+        "data": {
+          "point_id": "Kod automatu, numeryczne ID lub link do mapy Allegro"
+        }
+      }
+    },
+    "error": {
+      "invalid_point": "Podaj kod automatu, numeryczne pointId lub link HTTPS do mapy Allegro zawierający pointId.",
+      "access_blocked": "Allegro odmówiło dostępu lub zwróciło CAPTCHA (HTTP 403/429). Spróbuj ponownie później.",
+      "point_not_found": "To ID nie wskazuje Allegro One Boxa albo punkt nie jest dostępny.",
+      "invalid_data": "Allegro zwróciło błędny lub nieaktualny pomiar. Spróbuj ponownie później.",
+      "cannot_connect": "Nie udało się połączyć z Allegro. Sprawdź połączenie internetowe i spróbuj ponownie.",
+      "invalid_location": "Wybierz poprawne współrzędne i odległość od 0,2 do 20 km.",
+      "area_too_large": "Allegro zgrupowało część punktów. Zmniejsz odległość wyszukiwania albo podaj kod konkretnego automatu.",
+      "no_points": "Allegro nie zwróciło automatów w tym obszarze. Przesuń mapę, zmień odległość lub wpisz kod automatu."
+    },
+    "abort": {
+      "already_configured": "Ten One Box jest już skonfigurowany."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "pm25": {
+        "name": "PM2.5"
+      },
+      "pm10": {
+        "name": "PM10"
+      },
+      "measured_at": {
+        "name": "Czas pomiaru"
+      }
+    }
+  }
+}

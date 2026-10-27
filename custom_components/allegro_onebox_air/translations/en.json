@@ -1,0 +1,63 @@
+{
+  "title": "OBox Air",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Select an Allegro One Box",
+        "description": "Read public PM2.5 and PM10 measurements directly from Allegro. Find a One Box anywhere in Poland.",
+        "menu_options": {
+          "nearby": "Search on the map",
+          "manual": "Enter a code, ID, or link"
+        }
+      },
+      "nearby": {
+        "title": "Find One Boxes on the map",
+        "description": "Choose any location in Poland. The search uses a square extending the chosen distance north, south, east, and west. Start with 2 km; reduce the area if Allegro groups points into clusters.",
+        "data": {
+          "location": "Search location",
+          "radius_km": "Distance from the map centre"
+        }
+      },
+      "select": {
+        "title": "Select a One Box",
+        "description": "Choose a point, ordered by distance from your selected location. Its address will appear in the entry after confirmation. Some points may currently have no air-quality data.",
+        "data": {
+          "point_id": "One Box"
+        }
+      },
+      "manual": {
+        "title": "Enter a One Box",
+        "description": "Enter a public One Box code (for example AL012WE1), a numeric pointId, or an Allegro map link containing pointId. The code lookup covers Poland.",
+        "data": {
+          "point_id": "One Box code, numeric ID, or Allegro map link"
+        }
+      }
+    },
+    "error": {
+      "invalid_point": "Enter a One Box code, numeric pointId, or an HTTPS Allegro map link containing pointId.",
+      "access_blocked": "Allegro refused access or returned a CAPTCHA (HTTP 403/429). Try again later.",
+      "point_not_found": "This ID does not identify an Allegro One Box, or the point is not available.",
+      "invalid_data": "Allegro returned invalid or outdated measurement data. Try again later.",
+      "cannot_connect": "Could not connect to Allegro. Check the internet connection and try again.",
+      "invalid_location": "Choose valid coordinates and a search distance from 0.2 to 20 km.",
+      "area_too_large": "Allegro grouped some points into clusters. Reduce the search distance or use a One Box code to select a specific point.",
+      "no_points": "No One Boxes were returned in this area. Move the map, adjust the distance, or enter a One Box code."
+    },
+    "abort": {
+      "already_configured": "This One Box is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "pm25": {
+        "name": "PM2.5"
+      },
+      "pm10": {
+        "name": "PM10"
+      },
+      "measured_at": {
+        "name": "Measurement time"
+      }
+    }
+  }
+}
