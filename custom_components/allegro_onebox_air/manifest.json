@@ -1,9 +1,6 @@
 {
   "domain": "allegro_onebox_air",
   "name": "OBox Air",
-  "categories": [
-    "weather_alerts.air_quality_pollen"
-  ],
   "codeowners": [
     "@typ14mg"
   ],
